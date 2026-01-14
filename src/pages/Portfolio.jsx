@@ -38,12 +38,16 @@ const Portfolio = () => {
   const x = useTransform(scrollYProgress, [0, 1], ['0%', '-75%']);
 
   return (
-    <div ref={targetRef} className="h-[300vh] relative">
-      <div className="sticky top-0 flex h-screen items-center overflow-hidden">
-        <motion.div style={{ x }} className="flex gap-16 px-16 md:px-32">
-          <div className="flex-shrink-0 w-[80vw] md:w-[600px] flex flex-col justify-center">
+    <div ref={targetRef} className="md:h-[300vh] relative">
+      <div className="md:sticky md:top-0 md:flex md:h-screen md:items-center md:overflow-hidden">
+        {/* Mobile: Vertical Stack | Desktop: Horizontal Scroll */}
+        <motion.div
+          style={{ x: window.innerWidth > 768 ? x : 0 }}
+          className="flex flex-col md:flex-row gap-16 px-6 py-20 md:px-32 md:py-0"
+        >
+          <div className="flex-shrink-0 w-full md:w-auto md:min-w-[600px] md:pr-10 flex flex-col justify-center">
             <h1
-              className="text-[12vw] leading-[0.8] font-bold font-heading uppercase text-transparent stroke-text"
+              className="text-[11vw] md:text-[12vw] leading-[0.8] font-bold font-heading uppercase text-transparent stroke-text"
               style={{ WebkitTextStroke: '2px white' }}
             >
               Selected <br />{' '}
@@ -54,8 +58,11 @@ const Portfolio = () => {
               passion.
               <br />
               <br />
-              <span className="text-sm uppercase tracking-widest border-b border-white inline-block pb-1">
+              <span className="text-sm uppercase tracking-widest border-b border-white inline-block pb-1 hidden md:inline-block">
                 Scroll to Explore
+              </span>
+              <span className="text-sm uppercase tracking-widest border-b border-white inline-block pb-1 md:hidden">
+                Scroll Down
               </span>
             </p>
           </div>
@@ -63,7 +70,7 @@ const Portfolio = () => {
           {projects.map((project) => (
             <div
               key={project.id}
-              className="group relative flex-shrink-0 w-[80vw] md:w-[700px] h-[60vh] md:h-[70vh] bg-white/5 rounded-3xl overflow-hidden cursor-pointer border border-white/10"
+              className="group relative flex-shrink-0 w-full md:w-[700px] h-[50vh] md:h-[70vh] bg-white/5 rounded-3xl overflow-hidden cursor-pointer border border-white/10"
               onClick={() =>
                 (window.location.href = `/portfolio/${project.id}`)
               }
@@ -79,7 +86,7 @@ const Portfolio = () => {
                     <h2 className="text-4xl md:text-6xl font-bold font-heading uppercase">
                       {project.title}
                     </h2>
-                    <div className="p-4 bg-white text-black rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div className="p-4 bg-white text-black rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 hidden md:block">
                       <ArrowUpRight size={24} />
                     </div>
                   </div>

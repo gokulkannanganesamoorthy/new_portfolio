@@ -13,7 +13,7 @@ const Contact = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
 
   return (
-    <div className="min-h-screen relative flex items-center justify-center overflow-hidden">
+    <div className="min-h-screen relative flex items-center justify-center overflow-hidden py-20 px-4 md:px-0">
       {/* Background Mesh Image */}
       <img
         src="/assets/contact_background_mesh_1768406786360.png"

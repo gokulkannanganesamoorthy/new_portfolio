@@ -49,9 +49,9 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="flex flex-col md:flex-row justify-between items-end border-t border-white/10 pt-10 text-sm text-[var(--color-text-dim)] uppercase tracking-wider gap-4">
-          <p>© 2026 Gokul Kannan</p>
-          <div className="flex flex-col md:items-end">
+        <div className="flex flex-col md:flex-row justify-between items-center md:items-end border-t border-white/10 pt-10 text-sm text-[var(--color-text-dim)] uppercase tracking-wider gap-4">
+          <p className="text-center md:text-left">© 2026 Gokul Kannan</p>
+          <div className="flex flex-col items-center md:items-end text-center md:text-right">
             <p>Developed by</p>
             <a
               href="https://gokulkannanganesamoorthy.vercel.app"

@@ -19,23 +19,23 @@ const Navbar = () => {
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-      className="fixed top-8 left-1/2 -translate-x-1/2 z-50 flex items-center gap-2 p-2 bg-white/5 backdrop-blur-xl border border-white/10 rounded-full"
+      className="fixed top-4 inset-x-2 md:inset-x-auto md:top-8 md:left-1/2 md:-translate-x-1/2 z-50 flex items-center justify-between md:justify-start gap-2 p-1.5 bg-white/5 backdrop-blur-xl border border-white/10 rounded-full shadow-2xl min-w-0"
     >
       <Link
         to="/"
-        className="w-10 h-10 flex items-center justify-center bg-white text-black rounded-full font-bold font-heading"
+        className="w-9 h-9 flex-shrink-0 flex items-center justify-center bg-white text-black rounded-full font-bold font-heading text-sm"
       >
         G
       </Link>
 
-      <div className="flex bg-black/20 rounded-full p-1 border border-white/5">
+      <div className="flex bg-black/20 rounded-full p-1 border border-white/5 overflow-x-auto no-scrollbar scroll-smooth flex-grow md:flex-grow-0 justify-between md:justify-start gap-1">
         {links.map((link) => (
           <Link
             key={link.path}
             to={link.path}
             onMouseEnter={() => setHoveredPath(link.path)}
             onMouseLeave={() => setHoveredPath(location.pathname)}
-            className="relative px-6 py-2 rounded-full text-sm font-medium transition-colors"
+            className="relative px-3 py-2 rounded-full text-[10px] md:text-sm font-medium transition-colors whitespace-nowrap flex-shrink-0 uppercase tracking-wide"
           >
             {/* Active/Hover Background Pill */}
             {hoveredPath === link.path && (

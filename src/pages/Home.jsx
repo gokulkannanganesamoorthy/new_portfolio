@@ -25,7 +25,7 @@ const Home = () => {
             initial={{ y: 100, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-            className="text-[15vw] leading-[0.8] font-bold font-heading uppercase tracking-tighter mix-blend-difference"
+            className="text-[12vw] md:text-[15vw] leading-[0.8] font-bold font-heading uppercase tracking-tighter mix-blend-difference"
           >
             Design
           </motion.h1>
@@ -33,7 +33,7 @@ const Home = () => {
             initial={{ y: 100, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
-            className="text-[15vw] leading-[0.8] font-bold font-heading uppercase tracking-tighter text-transparent stroke-text"
+            className="text-[12vw] md:text-[15vw] leading-[0.8] font-bold font-heading uppercase tracking-tighter text-transparent stroke-text"
             style={{ WebkitTextStroke: '2px white' }}
           >
             Engineer
@@ -87,20 +87,36 @@ const Home = () => {
         <div className="space-y-32">
           {[
             {
+              id: 1,
               title: 'Neon Commerce',
               year: '2025',
               img: '/assets/neon_ecommerce_mockup_1768406704610.png',
             },
             {
+              id: 2,
               title: 'Cyber Dash',
               year: '2024',
               img: '/assets/cyber_dashboard_mockup_1768406723226.png',
             },
+            {
+              id: 3,
+              title: 'Fintech App',
+              year: '2023',
+              img: '/assets/fintech_app_mockup_1768406743922.png',
+            },
+            {
+              id: 4,
+              title: 'Identity',
+              year: '2023',
+              img: '/assets/abstract_identity_art_1768406767512.png',
+            },
           ].map((project, i) => (
             <div
-              key={i}
+              key={project.id}
               className="group cursor-pointer"
-              onClick={() => (window.location.href = `/portfolio/${i}`)}
+              onClick={() =>
+                (window.location.href = `/portfolio/${project.id}`)
+              }
             >
               <div className="aspect-video w-full overflow-hidden rounded-lg mb-6">
                 <motion.img

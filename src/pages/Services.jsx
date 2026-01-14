@@ -52,7 +52,7 @@ const Services = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: i * 0.1 }}
-            className="group relative h-[400px] md:h-[500px] border border-white/10 rounded-3xl overflow-hidden hover:border-white/30 transition-colors bg-white/5 backdrop-blur-sm flex items-end p-8 md:p-12"
+            className="group relative h-[450px] md:h-[500px] border border-white/10 rounded-3xl overflow-hidden hover:border-white/30 transition-colors bg-white/5 backdrop-blur-sm flex items-end p-6 md:p-12"
           >
             {/* Background Image with Parallax-like hover */}
             <div className="absolute inset-0 z-0">
