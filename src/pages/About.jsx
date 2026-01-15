@@ -1,6 +1,8 @@
 import { motion } from 'framer-motion';
 import GlitchText from '../components/GlitchText';
 import MagneticButton from '../components/Button';
+import profileImg from '../assets/1isto1gokul.jpeg';
+import resumePdf from '../assets/gokul_kannan_resume.pdf';
 
 const SkillBar = ({ skill, level, delay }) => {
   return (
@@ -31,7 +33,7 @@ const About = () => {
         <div className="space-y-12">
           <div className="relative w-full aspect-square md:aspect-[3/4] overflow-hidden border border-[var(--color-accent)]/30 group">
             <img
-              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=2787&auto=format&fit=crop"
+              src={profileImg}
               alt="Profile"
               className="w-full h-full object-cover grayscale contrast-125 group-hover:grayscale-0 transition-all duration-700"
             />
@@ -56,7 +58,7 @@ const About = () => {
             </p>
           </div>
 
-          <MagneticButton onClick={() => window.open('/resume.pdf')}>
+          <MagneticButton onClick={() => window.open(resumePdf)}>
             Download Resume_V2.0
           </MagneticButton>
         </div>
@@ -98,22 +100,22 @@ const About = () => {
             <div className="space-y-8 border-l border-white/10 ml-2 pl-8 relative">
               {[
                 {
-                  year: '2024 - PRESENT',
-                  role: 'Senior Frontend Engineer',
-                  company: 'TechNova',
-                  desc: 'Leading the frontend architecture for next-gen fintech platforms.',
+                  year: 'Feb 2025 - Dec 2025',
+                  role: 'Founder / CEO',
+                  company: 'Luno Tech',
+                  desc: 'Founded a digital agency. Led end-to-end client projects in web, app, SEO, and branding.',
                 },
                 {
-                  year: '2022 - 2024',
-                  role: 'Creative Developer',
-                  company: 'Studio 404',
-                  desc: 'Built award-winning experiential websites for luxury brands.',
+                  year: 'Jan 2025 - May 2025',
+                  role: 'Gen AI Engineer Intern',
+                  company: 'AxTR Labs',
+                  desc: 'Developed AI tools for automation and enhanced human interaction, focusing on NLP and R&D.',
                 },
                 {
-                  year: '2020 - 2022',
-                  role: 'UI Engineer',
-                  company: 'StartUp Inc.',
-                  desc: 'Developed the core design system and component library.',
+                  year: 'May 2022 - Jun 2022',
+                  role: 'Ethical Hacking Intern',
+                  company: 'HackUp Technologies',
+                  desc: 'Conducted vulnerability assessments and penetration tests, strengthening client security postures.',
                 },
               ].map((job, i) => (
                 <div key={i} className="relative">
